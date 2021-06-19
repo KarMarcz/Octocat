@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext{
+    testNgVersion = '7.3.0'
+    restAssuredVersion = '4.3.0'
+    assertJVersion = '3.15.0'
+    awaitilityVersion = '4.0.2'
+    jacksonVersion = '2.10.3'
+}
+
+dependencies {
+    // Test Framework
+    compile group: 'org.testng', name: 'testng', version: "${testNgVersion}"
+
+    //more readable assertions
+    compile group: 'org.assertj', name: 'assertj-core', version: "${assertJVersion}"
+
+    //Api test Framework
+    compile group: 'io.rest-assured', name: 'rest-assured', version: "${restAssuredVersion}"
+
+    //Jackson Tool for jsons
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "${jacksonVersion}"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "${jacksonVersion}"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "${jacksonVersion}"
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test{
+    useTestNG()
+    testLogging.showStandardStreams = true
+}
+
+//apply script plugin(this allows to run task from another gradle file)
+//apply from: 'src/test/resources/gradle_scripts/other.gradle'
+//
+//task testNak(type: Test){
+//    //---------Prepare Props From Custom File---------
+//
+//    //dependsOn mean it will run task (The task name is from plugin src/test/resources/gradle_scripts/other.gradle)
+//    dependsOn ':tests:sample_tests:runTestsInDiffrentGradleFile'
+//}
