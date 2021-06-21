@@ -1,0 +1,16 @@
+task userTestSuite(type: Test){
+    //variables
+    def props = new Properties()
+    //load props from file
+    file("src/test/resources/properties/api.properties").withInputStream {props.load(it)}
+
+    //load props into system variables
+    for (def map: props){
+        systemProperty map.key, map.value
+    }
+    testLogging.showStandardStreams = true
+
+    useTestNG(){
+        suites 'src/test/resources/userTestSuite.xml'
+    }
+}

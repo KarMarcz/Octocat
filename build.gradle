@@ -38,17 +38,14 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+apply from: 'src/test/resources/gradleScripts/userSuite.gradle'
+
 test{
     useTestNG()
     testLogging.showStandardStreams = true
 }
 
-//apply script plugin(this allows to run task from another gradle file)
-//apply from: 'src/test/resources/gradle_scripts/other.gradle'
-//
-//task testNak(type: Test){
-//    //---------Prepare Props From Custom File---------
-//
-//    //dependsOn mean it will run task (The task name is from plugin src/test/resources/gradle_scripts/other.gradle)
-//    dependsOn ':tests:sample_tests:runTestsInDiffrentGradleFile'
-//}
+task testOctocat(type: Test){
+    //---------Prepare Props From Custom File and run suite---------
+    dependsOn ':userTestSuite'
+}

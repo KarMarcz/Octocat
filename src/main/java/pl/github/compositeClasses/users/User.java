@@ -1,4 +1,4 @@
-package github.compositeClasses.users;
+package pl.github.compositeClasses.users;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -127,6 +127,134 @@ public class User {
 
     public List<User> getUsers(){
         return users;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public String getGravatarId() {
+        return gravatarId;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getHtmlUrl() {
+        return htmlUrl;
+    }
+
+    public String getFollowersUrl() {
+        return followersUrl;
+    }
+
+    public String getFollowingUrl() {
+        return followingUrl;
+    }
+
+    public String getGistsUrl() {
+        return gistsUrl;
+    }
+
+    public String getStarredUrl() {
+        return starredUrl;
+    }
+
+    public String getSubscriptionsUrl() {
+        return subscriptionsUrl;
+    }
+
+    public String getOrganizationsUrl() {
+        return organizationsUrl;
+    }
+
+    public String getReposUrl() {
+        return reposUrl;
+    }
+
+    public String getEventsUrl() {
+        return eventsUrl;
+    }
+
+    public String getReceivedEventsUrl() {
+        return receivedEventsUrl;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getSiteAdmin() {
+        return siteAdmin;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public String getBlog() {
+        return blog;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getHireable() {
+        return hireable;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public String getTwitterUsername() {
+        return twitterUsername;
+    }
+
+    public int getPublicRepos() {
+        return publicRepos;
+    }
+
+    public int getPublicGists() {
+        return publicGists;
+    }
+
+    public int getFollowers() {
+        return followers;
+    }
+
+    public int getFollowing() {
+        return following;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
     @Override
